@@ -5,13 +5,6 @@ JSON responses.
 
 Where full URLs are provided in responses they will be rendered as if service is running on 'http://194.31.79.154:6066/'.
 
-## Built with
-
-* [.Net 5.0](https://dotnet.microsoft.com/) - The backend
-* [VsCode](https://code.visualstudio.com/) - Visual Studio Code
-* [PostgreSQL](https://www.postgresql.org/) - For database.
-* No external libraries were used in this project
-
 ## Open Endpoints
 
 Open endpoints require no Authentication.
@@ -27,6 +20,14 @@ Each endpoint manipulates or displays information related to dijidom database th
 
 ### POST
 * [CreateMeasurement](Readme/Post/CreateMeasurement.md): `​/api​/Measurements​/CreateMeasurement`
+
+## Built with
+
+* [.Net 5.0](https://dotnet.microsoft.com/) - The backend
+* [VsCode](https://code.visualstudio.com/) - Visual Studio Code
+* [PostgreSQL](https://www.postgresql.org/) - For database.
+* No external libraries were used in this project
+
 ## Authors
 
 * **Ramazan Kaan Yarayan** - [Github](https://github.com/rknyryn)
