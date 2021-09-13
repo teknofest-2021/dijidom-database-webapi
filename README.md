@@ -16,7 +16,7 @@ Each endpoint manipulates or displays information related to dijidom database th
 * [GetPlantTypes](Readme/Get/GetPlantTypes.md): `/api/Plants/GetPlantTypes`
 * [GetSoil](Readme/Get/GetSoils.md): `/api/Plants/GetSoils`
 * [GetLastMeasurement](Readme/Get/GetLastMeasurement.md): `/api/Measurements/GetLastMeasurement`
-* [GetAllMesurementByPlantID](Radme/Get/GetAllMeasurementByPlantID.md): `​/api​/Measurements​/GetAllMesurementByPlantID`
+* [GetAllMesurementByPlantID](Readme/Get/GetAllMesurementByPlantID.md): `​/api​/Measurements​/GetAllMesurementByPlantID`
 
 ### POST
 * [CreateMeasurement](Readme/Post/CreateMeasurement.md): `​/api​/Measurements​/CreateMeasurement`
