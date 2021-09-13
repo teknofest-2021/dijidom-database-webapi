@@ -2,7 +2,7 @@ using System;
 
 namespace dijidom_database_webapi.Operations.MeasurementOperations.Command
 {
-    public class MeasurementCreateViewModel
+    public class CreateMeasurementViewModel
     {
         public DateTime MeasurementDate { get; set; }
         public int PlantID { get; set; }

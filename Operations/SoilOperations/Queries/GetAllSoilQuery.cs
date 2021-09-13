@@ -5,11 +5,11 @@ using dijidom_database_webapi.Models;
 
 namespace dijidom_database_webapi.Operations.SoilOperations.Queries
 {
-    public class SoilGetAllQuery
+    public class GetAllSoilQuery
     {
         private readonly IDijiDomDBContext _dbContext;
 
-        public SoilGetAllQuery(IDijiDomDBContext dbContext)
+        public GetAllSoilQuery(IDijiDomDBContext dbContext)
         {
             _dbContext = dbContext;
         }

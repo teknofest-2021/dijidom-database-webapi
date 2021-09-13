@@ -5,11 +5,11 @@ using dijidom_database_webapi.Models;
 
 namespace dijidom_database_webapi.Operations.PlantTypeOperations.Queries
 {
-    public class PlantTypeGetAllQuery
+    public class GetAllPlantTypeQuery
     {
         private readonly IDijiDomDBContext _dbContext;
 
-        public PlantTypeGetAllQuery(IDijiDomDBContext dbContext)
+        public GetAllPlantTypeQuery(IDijiDomDBContext dbContext)
         {
             _dbContext = dbContext;
         }

@@ -4,17 +4,17 @@ using dijidom_database_webapi.Models;
 
 namespace dijidom_database_webapi.Operations.MeasurementOperations.Command
 {
-    public class MeasurementCreateCommand
+    public class CreateMeasurementCommand
     {
         private readonly IDijiDomDBContext _dbContext;
 
-        public MeasurementCreateViewModel Model { get; set; }
+        public CreateMeasurementViewModel Model { get; set; }
 
-        public MeasurementCreateCommand(IDijiDomDBContext dbContext)
+        public CreateMeasurementCommand(IDijiDomDBContext dbContext)
         {
             _dbContext = dbContext;
         }
-        public ResultModel<MeasurementCreateViewModel> Handle()
+        public ResultModel<CreateMeasurementViewModel> Handle()
         {
             try
             {
@@ -46,11 +46,11 @@ namespace dijidom_database_webapi.Operations.MeasurementOperations.Command
 
                 _dbContext.Measurements.Add(measurement);
                 _dbContext.SaveChanges();
-                return ResultModel<MeasurementCreateViewModel>.GenerateResult(Model, "Successfully written to database");
+                return ResultModel<CreateMeasurementViewModel>.GenerateResult(Model, "Successfully written to database");
             }
             catch (Exception ex)
             {
-                return ResultModel<MeasurementCreateViewModel>.GenerateResult(Model, "Could not write to database" + ex.Message);
+                return ResultModel<CreateMeasurementViewModel>.GenerateResult(Model, "Could not write to database. " + ex.Message);
             }
         }
     }

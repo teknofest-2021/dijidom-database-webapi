@@ -15,10 +15,22 @@ Where full URLs are provided in responses they will be rendered as if service is
 ## Open Endpoints
 
 Open endpoints require no Authentication.
+Each endpoint manipulates or displays information related to dijidom database the which provided:
 
+### GET
+* [GetAmbients](Readme/Get/GetAmbients.md): `/api/Ambients/GetAmbient` 
+* [GetPlants](Readme/Get/GetPlants.md): `/api/Plants/GetPlants`
+* [GetPlantTypes](Readme/Get/GetPlantTypes.md): `/api/Plants/GetPlantTypes`
+* [GetSoil](Readme/Get/GetSoils.md): `/api/Plants/GetSoils`
+* [GetLastMeasurement](Radme/Get/GetLastMeasurement.md): `/api/Measurements/GetLastMeasurement`
+* [GetAllMesurementByPlantID](Radme/Get/GetAllMesurementByPlantID.md): `​/api​/Measurements​/GetAllMesurementByPlantID`
+
+### POST
+* [CreateMeasurement](Readme/Post/CreateMeasurement.md): `​/api​/Measurements​/CreateMeasurement`
 ## Authors
 
-* **Kaan Yarayan** - [Github](https://github.com/rknyryn)
+* **Ramazan Kaan Yarayan** - [Github](https://github.com/rknyryn)
+* **Fehmi Şener** - [Github](https://github.com/fehmiisener)
 
 See also the list of [contributors](https://github.com/teknofest-2021/dijidom-database-api) who participated in this project.
 

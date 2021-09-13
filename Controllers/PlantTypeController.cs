@@ -20,7 +20,7 @@ namespace dijidom_database_webapi.Controllers
         [HttpGet("GetPlantTypes")]
         public ActionResult<List<PlantType>> GetPlantTypes()
         {
-            PlantTypeGetAllQuery handler = new PlantTypeGetAllQuery(_dbContext);
+            GetAllPlantTypeQuery handler = new GetAllPlantTypeQuery(_dbContext);
             var result = handler.Handle();
             return Ok(result);
         }

@@ -1,8 +1,8 @@
 using System;
 
-namespace dijidom_database_webapi.Operations.MeasurementOperations.Queries.MesurementGetAllByPlantID
+namespace dijidom_database_webapi.Operations.MeasurementOperations.Queries.GetAllMeasurementByPlantID
 {
-    public class MesurementGetAllByPlantIDViewModel
+    public class GetAllMeasurementByPlantIDViewModel
     {
         public int PlantID { get; set; }
         public string PlantName { get; set; }

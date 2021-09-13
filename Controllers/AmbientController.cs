@@ -20,7 +20,7 @@ namespace dijidom_database_webapi.Controllers
         [HttpGet("GetAmbients")]
         public ActionResult<List<Ambient>> GetAllAmbient()
         {
-            AmbientGetAllQuery handler = new AmbientGetAllQuery(_dbContext);
+            GetAllAmbientQuery handler = new GetAllAmbientQuery(_dbContext);
             var result = handler.Handle();
             return Ok(result);
         }

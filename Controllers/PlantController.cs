@@ -17,9 +17,9 @@ namespace dijidom_database_webapi.Controllers
         }
 
         [HttpGet("GetPlants")]
-        public ActionResult<List<PlantGetAllViewModel>> GetPlants()
+        public ActionResult<List<GetAllPlantViewModel>> GetPlants()
         {
-            PlantGetAllQuery handler = new PlantGetAllQuery(_dbContext);
+            GetAllPlantQuery handler = new GetAllPlantQuery(_dbContext);
             var result = handler.Handle();
             return Ok(result);
         }

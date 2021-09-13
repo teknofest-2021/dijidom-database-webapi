@@ -2,19 +2,19 @@ using System.Linq;
 using System.Collections.Generic;
 using dijidom_database_webapi.Data;
 
-namespace dijidom_database_webapi.Operations.MeasurementOperations.Queries.MesurementGetAllByPlantID
+namespace dijidom_database_webapi.Operations.MeasurementOperations.Queries.GetAllMeasurementByPlantID
 {
-    public class MesurementGetAllByPlantIDQuery
+    public class GetAllMeasurementByPlantIDQuery
     {
         private readonly IDijiDomDBContext _dbContext;
 
-        public MesurementGetAllByPlantIDQuery(IDijiDomDBContext dbContext)
+        public GetAllMeasurementByPlantIDQuery(IDijiDomDBContext dbContext)
         {
             _dbContext = dbContext;
         }
 
         public int PlantID { get; set; }
-        public List<MesurementGetAllByPlantIDViewModel> Handle()
+        public List<GetAllMeasurementByPlantIDViewModel> Handle()
         {
             var result = from mesurement in _dbContext.Measurements.Where(p => p.PlantID==PlantID)
                          join plant in _dbContext.Plants
@@ -26,7 +26,7 @@ namespace dijidom_database_webapi.Operations.MeasurementOperations.Queries.Mesur
                          join planttype in _dbContext.PlantTypes
                          on plant.TypeID equals planttype.TypeID
                          orderby mesurement.MeasurementID descending
-                         select new MesurementGetAllByPlantIDViewModel
+                         select new GetAllMeasurementByPlantIDViewModel
                          {
                              AirHumidity = ambient.AirHumidity,
                              AirQuality = ambient.AirQuality,

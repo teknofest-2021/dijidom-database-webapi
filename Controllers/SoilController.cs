@@ -20,7 +20,7 @@ namespace dijidom_database_webapi.Controllers
         [HttpGet("GetSoils")]
         public ActionResult<List<Soil>> GetPlants()
         {
-            SoilGetAllQuery handler = new SoilGetAllQuery(_dbContext);
+            GetAllSoilQuery handler = new GetAllSoilQuery(_dbContext);
             var result = handler.Handle();
             return Ok(result);
         }

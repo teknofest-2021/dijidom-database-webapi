@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using dijidom_database_webapi.Data;
 using dijidom_database_webapi.Operations.MeasurementOperations.Command;
-using dijidom_database_webapi.Operations.MeasurementOperations.Queries.MesurementGetAllByPlantID;
-using dijidom_database_webapi.Operations.MeasurementOperations.Queries.MesurementGetLast;
+using dijidom_database_webapi.Operations.MeasurementOperations.Queries.GetAllMeasurementByPlantID;
+using dijidom_database_webapi.Operations.MeasurementOperations.Queries.GetLastMeasurement;
 using Microsoft.AspNetCore.Mvc;
 
 namespace dijidom_database_webapi.Controllers
@@ -18,27 +18,27 @@ namespace dijidom_database_webapi.Controllers
             _dbContext = dbContext;
         }
 
-        [HttpPost("MeasurementCreate")]
-        public IActionResult MeasurementCreate([FromBody] MeasurementCreateViewModel model)
+        [HttpPost("CreateMeasurement")]
+        public IActionResult CreateMeasurement([FromBody] CreateMeasurementViewModel model)
         {
-            MeasurementCreateCommand handler = new MeasurementCreateCommand(_dbContext);
+            CreateMeasurementCommand handler = new CreateMeasurementCommand(_dbContext);
             handler.Model = model;
             var result = handler.Handle();
             return Ok(result);
         }
 
-        [HttpGet("GetMeasurementLast")]
-        public ActionResult<List<MesurementGetLastViewModel>> GetMeasurementLast()
+        [HttpGet("GetLastMeasurement")]
+        public ActionResult<List<GetLastMeasurementViewModel>> GetLastMeasurement()
         {
-            MesurementGetLastQuery handler = new MesurementGetLastQuery(_dbContext);
+            GetLastMeasurementQuery handler = new GetLastMeasurementQuery(_dbContext);
             var result = handler.Handle();
             return Ok(result);
         }
 
-        [HttpGet("MesurementGetAllByPlantID")]
-        public ActionResult<List<MesurementGetLastViewModel>> MesurementGetAllByPlantID(int plantID)
+        [HttpGet("GetAllMesurementByPlantID")]
+        public ActionResult<List<GetAllMeasurementByPlantIDViewModel>> GetAllMesurementByPlantID(int plantID)
         {
-            MesurementGetAllByPlantIDQuery handler = new MesurementGetAllByPlantIDQuery(_dbContext);
+            GetAllMeasurementByPlantIDQuery handler = new GetAllMeasurementByPlantIDQuery(_dbContext);
             handler.PlantID = plantID;
             var result = handler.Handle();
             return Ok(result);

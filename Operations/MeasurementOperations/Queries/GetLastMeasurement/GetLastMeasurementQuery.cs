@@ -2,18 +2,18 @@ using System.Linq;
 using System.Collections.Generic;
 using dijidom_database_webapi.Data;
 
-namespace dijidom_database_webapi.Operations.MeasurementOperations.Queries.MesurementGetLast
+namespace dijidom_database_webapi.Operations.MeasurementOperations.Queries.GetLastMeasurement
 {
-    public class MesurementGetLastQuery
+    public class GetLastMeasurementQuery
     {
         private readonly IDijiDomDBContext _dbContext;
 
-        public MesurementGetLastQuery(IDijiDomDBContext dbContext)
+        public GetLastMeasurementQuery(IDijiDomDBContext dbContext)
         {
             _dbContext = dbContext;
         }
 
-        public List<MesurementGetLastViewModel> Handle()
+        public List<GetLastMeasurementViewModel> Handle()
         {
             var result = from mesurement in _dbContext.Measurements
             join plant in _dbContext.Plants
@@ -25,7 +25,7 @@ namespace dijidom_database_webapi.Operations.MeasurementOperations.Queries.Mesur
             join planttype in _dbContext.PlantTypes
             on plant.TypeID equals planttype.TypeID
             orderby mesurement.MeasurementID descending
-            select new MesurementGetLastViewModel {
+            select new GetLastMeasurementViewModel {
                 AirHumidity = ambient.AirHumidity,
                 AirQuality = ambient.AirQuality,
                 AirTemperature = ambient.AirTemperature,

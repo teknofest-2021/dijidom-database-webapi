@@ -1,8 +1,8 @@
 using System;
 
-namespace dijidom_database_webapi.Operations.MeasurementOperations.Queries.MesurementGetLast
+namespace dijidom_database_webapi.Operations.MeasurementOperations.Queries.GetLastMeasurement
 {
-    public class MesurementGetLastViewModel
+    public class GetLastMeasurementViewModel
     {
         public int PlantID { get; set; }
         public string PlantName { get; set; }
