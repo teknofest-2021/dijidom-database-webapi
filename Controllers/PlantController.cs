@@ -1,5 +1,8 @@
+using System;
 using System.Collections.Generic;
 using dijidom_database_webapi.Data;
+using dijidom_database_webapi.Models;
+using dijidom_database_webapi.Operations.PlantOperations.Command;
 using dijidom_database_webapi.Operations.PlantOperations.Queries;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,6 +25,15 @@ namespace dijidom_database_webapi.Controllers
             GetAllPlantQuery handler = new GetAllPlantQuery(_dbContext);
             var result = handler.Handle();
             return Ok(result);
+        }
+
+        [HttpPost("UpdatePlantHeight")]
+        public ActionResult<Plant> UpdatePlantHeight(int plantID, Single plantHeight)
+        {
+            UpdatePlantHeightCommand handler = new UpdatePlantHeightCommand(_dbContext);
+            handler.PlantID = plantID;
+            handler.PlantHeight = plantHeight;
+            return Ok(handler.Handle());
         }
     }
 }

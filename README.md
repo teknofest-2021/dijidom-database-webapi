@@ -20,6 +20,7 @@ Each endpoint manipulates or displays information related to dijidom database th
 
 ### POST
 * [CreateMeasurement](Readme/Post/CreateMeasurement.md): `​/api​/Measurements​/CreateMeasurement`
+* [UpdatePlantHeight](Readme/Post/UpdatePlantHeight.md): `​/api​/Plants​/UpdatePlantHeight`
 
 ## Built with
 
