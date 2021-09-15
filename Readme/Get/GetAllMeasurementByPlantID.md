@@ -13,7 +13,7 @@
 
 ### Example URL
 ```
-/api/Measurements/GetAllMesurementByPlantID?plantID=1
+/api/Measurements/GetAllMeasurementByPlantID?plantID=1
 ```
 
 ## Success Response
