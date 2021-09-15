@@ -36,7 +36,9 @@ namespace dijidom_database_webapi
 
             services.AddScoped<IDijiDomDBContext>(provider => provider.GetService<DijiDomDBContext>());
 
-            services.AddCors(c => { c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin()); });
+            services.AddCors(options =>
+                options.AddDefaultPolicy(builder =>
+                    builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin()));
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -55,7 +57,7 @@ namespace dijidom_database_webapi
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "dijidom_database_webapi v1"));
             }
 
-            app.UseCors(options => options.AllowAnyOrigin());
+            app.UseCors();
 
             app.UseHttpsRedirection();
 
