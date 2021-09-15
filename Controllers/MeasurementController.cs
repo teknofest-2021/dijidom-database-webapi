@@ -35,8 +35,8 @@ namespace dijidom_database_webapi.Controllers
             return Ok(result);
         }
 
-        [HttpGet("GetAllMesurementByPlantID")]
-        public ActionResult<List<GetAllMeasurementByPlantIDViewModel>> GetAllMesurementByPlantID(int plantID)
+        [HttpGet("GetAllMeasurementByPlantID")]
+        public ActionResult<List<GetAllMeasurementByPlantIDViewModel>> GetAllMeasurementByPlantID(int plantID)
         {
             GetAllMeasurementByPlantIDQuery handler = new GetAllMeasurementByPlantIDQuery(_dbContext);
             handler.PlantID = plantID;

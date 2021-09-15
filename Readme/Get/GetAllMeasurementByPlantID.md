@@ -1,6 +1,6 @@
 # GetAllMesurementByPlantID
 
-**URL** : `​​​/api​/Measurements​/GetAllMesurementByPlantID`
+**URL** : `​​​/api​/Measurements​/GetAllMeasurementByPlantID`
 
 **Method** : `GET`
 
