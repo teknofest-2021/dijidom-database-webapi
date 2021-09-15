@@ -3,7 +3,7 @@
 This repostory is about [DİJİ-DOM Database WEBAPI](https://github.com/teknofest-2021/dijidom-database-webapi) and so the api will return
 JSON responses.
 
-Where full URLs are provided in responses they will be rendered as if service is running on 'http://194.31.79.154:6066/'.
+Where full URLs are provided in responses they will be rendered as if service is running on 'http://194.31.79.154:6068'.
 
 ## Open Endpoints
 
