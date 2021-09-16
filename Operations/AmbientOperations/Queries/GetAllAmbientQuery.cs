@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using dijidom_database_webapi.Data;
-using dijidom_database_webapi.Models;
 
 namespace dijidom_database_webapi.Operations.AmbientOperations.Queries
 {
@@ -14,13 +13,20 @@ namespace dijidom_database_webapi.Operations.AmbientOperations.Queries
             _dbContext = dbContext;
         }
 
-        public List<Ambient> Handle()
+        public List<GetAllAmbientViewModel> Handle()
         {
-            List<Ambient> ambients;
-            ambients = _dbContext.Ambients.ToList();
-            if(ambients == null)
-                ambients = new List<Ambient>();
-            return ambients;
+            var result = from ambient in _dbContext.Ambients
+                         join measurement in _dbContext.Measurements
+                         on ambient.AmbientID equals measurement.AmbientID
+                         select new GetAllAmbientViewModel
+                         {
+                             AmbientID = ambient.AmbientID,
+                             AirTemperature = ambient.AirTemperature,
+                             AirHumidity = ambient.AirHumidity,
+                             AirQuality = ambient.AirHumidity,
+                             CreatedDate = measurement.CreatedDate
+                         };
+            return result.ToList();
         }
     }
 }

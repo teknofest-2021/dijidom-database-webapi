@@ -14,13 +14,19 @@ namespace dijidom_database_webapi.Operations.SoilOperations.Queries
             _dbContext = dbContext;
         }
 
-        public List<Soil> Handle()
+        public List<GetAllSoilViewModel> Handle()
         {
-            List<Soil> soils;
-            soils = _dbContext.Soils.ToList();
-            if(soils == null)
-                soils = new List<Soil>();
-            return soils;
+            var result = from soil in _dbContext.Soils
+                         join measurement in _dbContext.Measurements
+                         on soil.SoilID equals measurement.SoilID
+                         select new GetAllSoilViewModel
+                         {
+                             SoilID = soil.SoilID,
+                             SoilTemperature = soil.SoilTemperature,
+                             SoilHumidity = soil.SoilHumidity,
+                             CreatedDate = measurement.CreatedDate
+                         };
+            return result.ToList();
         }
     }
 }

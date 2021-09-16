@@ -18,7 +18,7 @@ namespace dijidom_database_webapi.Controllers
         }
 
         [HttpGet("GetAmbients")]
-        public ActionResult<List<Ambient>> GetAllAmbient()
+        public ActionResult<List<GetAllAmbientViewModel>> GetAllAmbient()
         {
             GetAllAmbientQuery handler = new GetAllAmbientQuery(_dbContext);
             var result = handler.Handle();
