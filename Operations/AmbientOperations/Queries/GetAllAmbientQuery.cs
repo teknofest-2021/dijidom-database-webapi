@@ -23,7 +23,7 @@ namespace dijidom_database_webapi.Operations.AmbientOperations.Queries
                              AmbientID = ambient.AmbientID,
                              AirTemperature = ambient.AirTemperature,
                              AirHumidity = ambient.AirHumidity,
-                             AirQuality = ambient.AirHumidity,
+                             AirQuality = ambient.AirQuality,
                              MeasurementDate = measurement.MeasurementDate
                          };
             return result.ToList();
