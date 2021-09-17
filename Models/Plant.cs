@@ -10,6 +10,6 @@ namespace dijidom_database_webapi.Models
         public int PlantID { get; set; }
         public string PlantName { get; set; }
         public int TypeID { get; set; }
-        public Single PlantHeight { get; set; }
+        public DateTime SowingDate { get; set; }
     }
 }

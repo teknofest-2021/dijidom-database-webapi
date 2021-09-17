@@ -39,9 +39,10 @@ namespace dijidom_database_webapi.Operations.MeasurementOperations.Command
                 Measurement measurement = new Measurement()
                 {
                     PlantID = Model.PlantID,
+                    PlantHeight = Model.PlantHeight,
                     AmbientID = ambient.AmbientID,
                     SoilID = soil.SoilID,
-                    CreatedDate = Model.MeasurementDate
+                    MeasurementDate = Model.MeasurementDate
                 };
 
                 _dbContext.Measurements.Add(measurement);

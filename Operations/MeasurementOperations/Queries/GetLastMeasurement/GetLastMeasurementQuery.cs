@@ -30,12 +30,13 @@ namespace dijidom_database_webapi.Operations.MeasurementOperations.Queries.GetLa
                 AirQuality = ambient.AirQuality,
                 AirTemperature = ambient.AirTemperature,
                 PlantID = plant.PlantID,
-                PlantHeight = plant.PlantHeight,
+                PlantHeight = mesurement.PlantHeight,
                 PlantName = plant.PlantName,
+                SowingDate = plant.SowingDate,
                 SoilHumidity = soil.SoilHumidity,
                 SoilTemperature = soil.SoilTemperature,
                 TypeName = planttype.TypeName,
-                CreatedDate = mesurement.CreatedDate
+                MeasurementDate = mesurement.MeasurementDate,
             };
             //Basic Distinc
             var data = result.ToList().GroupBy(g => g.PlantID).Select(s => s.First()).ToList();

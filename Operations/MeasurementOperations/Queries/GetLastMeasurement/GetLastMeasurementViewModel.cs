@@ -13,6 +13,7 @@ namespace dijidom_database_webapi.Operations.MeasurementOperations.Queries.GetLa
         public Single AirHumidity { get; set; }
         public Single SoilTemperature { get; set; }
         public Single SoilHumidity { get; set; }
-        public DateTime CreatedDate { get; set; }
+        public DateTime MeasurementDate { get; set; }
+        public DateTime SowingDate { get; set; }
     }
 }

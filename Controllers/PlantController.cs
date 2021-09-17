@@ -10,7 +10,7 @@ namespace dijidom_database_webapi.Controllers
 {
     [ApiController]
     [Route("api/[controller]s")]
-    public class PlantController: ControllerBase
+    public class PlantController : ControllerBase
     {
         private readonly IDijiDomDBContext _dbContext;
 
@@ -33,6 +33,14 @@ namespace dijidom_database_webapi.Controllers
             UpdatePlantHeightCommand handler = new UpdatePlantHeightCommand(_dbContext);
             handler.PlantID = plantID;
             handler.PlantHeight = plantHeight;
+            return Ok(handler.Handle());
+        }
+
+        [HttpPost("CreatePlant")]
+        public ActionResult<Plant> CreatePlant([FromBody] CreatePlantViewModel plant)
+        {
+            CreatePlantCommand handler = new CreatePlantCommand(_dbContext);
+            handler.Model = plant;
             return Ok(handler.Handle());
         }
     }

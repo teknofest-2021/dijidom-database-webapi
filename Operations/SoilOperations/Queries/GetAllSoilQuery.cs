@@ -24,7 +24,7 @@ namespace dijidom_database_webapi.Operations.SoilOperations.Queries
                              SoilID = soil.SoilID,
                              SoilTemperature = soil.SoilTemperature,
                              SoilHumidity = soil.SoilHumidity,
-                             CreatedDate = measurement.CreatedDate
+                             MeasurementDate = measurement.MeasurementDate
                          };
             return result.ToList();
         }
