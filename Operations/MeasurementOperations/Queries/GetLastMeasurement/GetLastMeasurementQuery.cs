@@ -15,28 +15,28 @@ namespace dijidom_database_webapi.Operations.MeasurementOperations.Queries.GetLa
 
         public List<GetLastMeasurementViewModel> Handle()
         {
-            var result = from mesurement in _dbContext.Measurements
+            var result = from measurement in _dbContext.Measurements
             join plant in _dbContext.Plants
-            on mesurement.PlantID equals plant.PlantID
+            on measurement.PlantID equals plant.PlantID
             join soil in _dbContext.Soils
-            on mesurement.SoilID equals soil.SoilID
+            on measurement.SoilID equals soil.SoilID
             join ambient in _dbContext.Ambients
-            on mesurement.AmbientID equals ambient.AmbientID
+            on measurement.AmbientID equals ambient.AmbientID
             join planttype in _dbContext.PlantTypes
             on plant.TypeID equals planttype.TypeID
-            orderby mesurement.MeasurementID descending
+            orderby measurement.MeasurementID descending
             select new GetLastMeasurementViewModel {
                 AirHumidity = ambient.AirHumidity,
                 AirQuality = ambient.AirQuality,
                 AirTemperature = ambient.AirTemperature,
                 PlantID = plant.PlantID,
-                PlantHeight = mesurement.PlantHeight,
+                PlantHeight = measurement.PlantHeight,
                 PlantName = plant.PlantName,
                 SowingDate = plant.SowingDate,
                 SoilHumidity = soil.SoilHumidity,
                 SoilTemperature = soil.SoilTemperature,
                 TypeName = planttype.TypeName,
-                MeasurementDate = mesurement.MeasurementDate,
+                MeasurementDate = measurement.MeasurementDate,
             };
             //Basic Distinc
             var data = result.ToList().GroupBy(g => g.PlantID).Select(s => s.First()).ToList();

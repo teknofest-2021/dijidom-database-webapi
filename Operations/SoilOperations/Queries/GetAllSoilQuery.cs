@@ -19,8 +19,12 @@ namespace dijidom_database_webapi.Operations.SoilOperations.Queries
             var result = from soil in _dbContext.Soils
                          join measurement in _dbContext.Measurements
                          on soil.SoilID equals measurement.SoilID
+                         join plant in _dbContext.Plants
+                         on measurement.PlantID equals plant.PlantID
                          select new GetAllSoilViewModel
                          {
+                             PlantID = measurement.PlantID,
+                             PlantName = plant.PlantName,
                              SoilID = soil.SoilID,
                              SoilTemperature = soil.SoilTemperature,
                              SoilHumidity = soil.SoilHumidity,
