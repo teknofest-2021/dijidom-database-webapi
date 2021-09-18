@@ -24,7 +24,7 @@ namespace dijidom_database_webapi.Operations.AmbientOperations.Queries
                              AirTemperature = ambient.AirTemperature,
                              AirHumidity = ambient.AirHumidity,
                              AirQuality = ambient.AirQuality,
-                             MeasurementDate = measurement.MeasurementDate
+                             MeasurementDate = measurement.MeasurementDate.ToString("dd/MM/yyyy HH:mm")
                          };
             return result.ToList();
         }

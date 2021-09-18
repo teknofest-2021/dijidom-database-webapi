@@ -34,11 +34,11 @@ namespace dijidom_database_webapi.Operations.MeasurementOperations.Queries.GetAl
                              PlantID = plant.PlantID,
                              PlantHeight = mesurement.PlantHeight,
                              PlantName = plant.PlantName,
-                             SowingDate = plant.SowingDate,
+                             SowingDate = plant.SowingDate.ToString("dd/MM/yyyy HH:mm"),
                              SoilHumidity = soil.SoilHumidity,
                              SoilTemperature = soil.SoilTemperature,
                              TypeName = planttype.TypeName,
-                             MeasurementDate = mesurement.MeasurementDate
+                             MeasurementDate = mesurement.MeasurementDate.ToString("dd/MM/yyyy HH:mm")
                          };
             return result.ToList();
         }

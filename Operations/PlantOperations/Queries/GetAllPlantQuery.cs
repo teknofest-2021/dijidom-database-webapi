@@ -21,7 +21,7 @@ namespace dijidom_database_webapi.Operations.PlantOperations.Queries
             select new GetAllPlantViewModel {
                 PlantID = plant.PlantID,
                 PlantName = plant.PlantName,
-                SowingDate = plant.SowingDate,
+                SowingDate = plant.SowingDate.ToString("dd/MM/yyyy HH:mm"),
                 TypeName = planttype.TypeName
             };
             return result.ToList();

@@ -8,6 +8,6 @@ namespace dijidom_database_webapi.Operations.AmbientOperations.Queries
         public Single AirQuality { get; set; }
         public Single AirTemperature { get; set; }
         public Single AirHumidity { get; set; }
-        public DateTime MeasurementDate { get; set; }
+        public String MeasurementDate { get; set; }
     }
 }

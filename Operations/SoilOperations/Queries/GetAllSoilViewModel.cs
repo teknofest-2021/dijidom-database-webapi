@@ -9,6 +9,6 @@ namespace dijidom_database_webapi.Operations.SoilOperations.Queries
         public string PlantName { get; set; }
         public Single SoilHumidity { get; set; }
         public Single SoilTemperature { get; set; }
-        public DateTime MeasurementDate { get; set; }
+        public String MeasurementDate { get; set; }
     }
 }
