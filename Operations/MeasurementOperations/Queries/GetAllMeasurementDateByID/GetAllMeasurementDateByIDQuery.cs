@@ -25,7 +25,7 @@ namespace dijidom_database_webapi.Operations.MeasurementOperations.Queries.GetAl
                          on measurement.AmbientID equals ambient.AmbientID
                          join planttype in _dbContext.PlantTypes
                          on plant.TypeID equals planttype.TypeID
-                         orderby measurement.MeasurementID descending
+                         orderby measurement.MeasurementID ascending
                          where measurement.PlantID == Model.PlantID
                          where measurement.MeasurementDate.Year == Model.MeasurementDate.Year
                          where measurement.MeasurementDate.Month == Model.MeasurementDate.Month

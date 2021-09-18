@@ -25,7 +25,7 @@ namespace dijidom_database_webapi.Operations.MeasurementOperations.Queries.GetAl
                          on mesurement.AmbientID equals ambient.AmbientID
                          join planttype in _dbContext.PlantTypes
                          on plant.TypeID equals planttype.TypeID
-                         orderby mesurement.MeasurementID descending
+                         orderby mesurement.MeasurementID ascending
                          select new GetAllMeasurementByPlantIDViewModel
                          {
                              AirHumidity = ambient.AirHumidity,
