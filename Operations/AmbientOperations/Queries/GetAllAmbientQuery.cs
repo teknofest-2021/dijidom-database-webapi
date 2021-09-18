@@ -18,13 +18,14 @@ namespace dijidom_database_webapi.Operations.AmbientOperations.Queries
             var result = from ambient in _dbContext.Ambients
                          join measurement in _dbContext.Measurements
                          on ambient.AmbientID equals measurement.AmbientID
+                         orderby ambient.AmbientID descending
                          select new GetAllAmbientViewModel
                          {
                              AmbientID = ambient.AmbientID,
                              AirTemperature = ambient.AirTemperature,
                              AirHumidity = ambient.AirHumidity,
                              AirQuality = ambient.AirQuality,
-                             MeasurementDate = measurement.MeasurementDate.ToString("dd/MM/yyyy HH:mm")
+                             MeasurementDate = measurement.MeasurementDate.AddHours(-3).ToString("dd/MM/yyyy HH:mm")
                          };
             return result.ToList();
         }

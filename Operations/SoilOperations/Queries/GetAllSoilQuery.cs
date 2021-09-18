@@ -21,6 +21,7 @@ namespace dijidom_database_webapi.Operations.SoilOperations.Queries
                          on soil.SoilID equals measurement.SoilID
                          join plant in _dbContext.Plants
                          on measurement.PlantID equals plant.PlantID
+                         orderby soil.SoilID descending
                          select new GetAllSoilViewModel
                          {
                              PlantID = measurement.PlantID,
@@ -28,7 +29,7 @@ namespace dijidom_database_webapi.Operations.SoilOperations.Queries
                              SoilID = soil.SoilID,
                              SoilTemperature = soil.SoilTemperature,
                              SoilHumidity = soil.SoilHumidity,
-                             MeasurementDate = measurement.MeasurementDate.ToString("dd/MM/yyyy HH:mm")
+                             MeasurementDate = measurement.MeasurementDate.AddHours(-3).ToString("dd/MM/yyyy HH:mm")
                          };
             return result.ToList();
         }

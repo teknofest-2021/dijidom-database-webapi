@@ -32,11 +32,11 @@ namespace dijidom_database_webapi.Operations.MeasurementOperations.Queries.GetLa
                 PlantID = plant.PlantID,
                 PlantHeight = measurement.PlantHeight,
                 PlantName = plant.PlantName,
-                SowingDate = plant.SowingDate.ToString("dd/MM/yyyy HH:mm"),
+                SowingDate = plant.SowingDate.AddHours(-3).ToString("dd/MM/yyyy HH:mm"),
                 SoilHumidity = soil.SoilHumidity,
                 SoilTemperature = soil.SoilTemperature,
                 TypeName = planttype.TypeName,
-                MeasurementDate = measurement.MeasurementDate.ToString("dd/MM/yyyy HH:mm"),
+                MeasurementDate = measurement.MeasurementDate.AddHours(-3).ToString("dd/MM/yyyy HH:mm"),
             };
             //Basic Distinc
             var data = result.ToList().GroupBy(g => g.PlantID).Select(s => s.First()).ToList();

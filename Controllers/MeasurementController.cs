@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using dijidom_database_webapi.Data;
 using dijidom_database_webapi.Operations.MeasurementOperations.Command;
 using dijidom_database_webapi.Operations.MeasurementOperations.Queries.GetAllMeasurementByPlantID;
+using dijidom_database_webapi.Operations.MeasurementOperations.Queries.GetAllMeasurementDateByID;
 using dijidom_database_webapi.Operations.MeasurementOperations.Queries.GetLastMeasurement;
 using Microsoft.AspNetCore.Mvc;
 
@@ -42,6 +43,15 @@ namespace dijidom_database_webapi.Controllers
             handler.PlantID = plantID;
             var result = handler.Handle();
             return Ok(result);
+        }
+
+
+        [HttpPost("GetAllMeasurementDateByIDQuery")]
+        public ActionResult<List<GetAllMeasurementByPlantIDViewModel>> GetAllMeasurementDateByIDQuery(GetAllMeasurementDateByIDQueryModel model)
+        {
+            GetAllMeasurementDateByIDQuery handler = new GetAllMeasurementDateByIDQuery(_dbContext);
+            handler.Model = model;
+            return Ok(handler.Handle());
         }
     }
 }

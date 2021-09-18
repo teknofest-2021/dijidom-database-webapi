@@ -27,15 +27,6 @@ namespace dijidom_database_webapi.Controllers
             return Ok(result);
         }
 
-        [HttpPost("UpdatePlantHeight")]
-        public ActionResult<Plant> UpdatePlantHeight(int plantID, Single plantHeight)
-        {
-            UpdatePlantHeightCommand handler = new UpdatePlantHeightCommand(_dbContext);
-            handler.PlantID = plantID;
-            handler.PlantHeight = plantHeight;
-            return Ok(handler.Handle());
-        }
-
         [HttpPost("CreatePlant")]
         public ActionResult<Plant> CreatePlant([FromBody] CreatePlantViewModel plant)
         {
